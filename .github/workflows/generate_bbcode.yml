@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - README.md
-  create:
-    tags:
-      - 'bbc*'
 
 env:
   outf: README.bbc
@@ -22,7 +19,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.0
+          dotnet-version: 6.0.0
 
       - name: Install markdown_to_bbcodenm tool
         run: dotnet tool install -g Converter.MarkdownToBBCodeNM.Tool

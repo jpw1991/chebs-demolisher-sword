@@ -4,6 +4,10 @@ A mod that replaces the Demolisher Hammer's mesh & texture with that of a sword.
 
 This mod was commissioned by Nexus Mods user [EnclaveSix](https://forums.nexusmods.com/index.php?/user/78133863-enclavesix/).
 
+**Video:**
+
+[![Cheb's Demolisher Sword Valheim](https://img.youtube.com/vi/3064zs8q_kA/0.jpg)](https://youtu.be/3064zs8q_kA "Cheb's Demolisher Sword Valheim")
+
 ## About Me
 
 [![image1](https://imgur.com/Fahi6sP.png)](https://chebgonaz.pythonanywhere.com)

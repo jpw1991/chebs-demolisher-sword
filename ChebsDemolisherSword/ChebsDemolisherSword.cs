@@ -10,7 +10,7 @@ namespace ChebsDemolisherSword
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     [BepInDependency(Main.ModGuid)]
-    [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
+    [NetworkCompatibility(CompatibilityLevel.NotEnforced, VersionStrictness.None)]
     internal class ChebsDemolisherSword : BaseUnityPlugin
     {
         public const string PluginGuid = "com.chebgonaz.chebsdemolishersword";

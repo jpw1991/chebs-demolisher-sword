@@ -2,8 +2,8 @@ name: Generate BBCode
 
 on:
   push:
-    paths:
-      - README.md
+    branches:
+      - master
 
 env:
   outf: README.bbc

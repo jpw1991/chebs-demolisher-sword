@@ -5,9 +5,9 @@ on:
     types: [published] # run when a new release is published
 
 env:
-  name: ChebsModStub
+  name: ChebsDemolisherSword
   jsonf: manifest.json
-  dlpath: https://github.com/jpw1991/chebs-mod-stub/releases/download
+  dlpath: https://github.com/jpw1991/chebs-demolisher-sword/releases/download
   dependencies: "ValheimModding-Jotunn@2.11.2" # dependencies separated by spaces
   categories: "Mods" # categories separated by spaces
   namespace: ChebGonaz

@@ -46,16 +46,16 @@ if __name__ == '__main__':
         sys.exit(1)
 
     file_pattern_replacements = [
-        FilePatternReplacement('ChebsModStub/Properties/AssemblyInfo.cs',
+        FilePatternReplacement('ChebsDemolisherSword/Properties/AssemblyInfo.cs',
                                'AssemblyVersion\\([".0-9]+\\)',
                                f'AssemblyVersion("{version}.0")'),
-        FilePatternReplacement('ChebsModStub/Properties/AssemblyInfo.cs',
+        FilePatternReplacement('ChebsDemolisherSword/Properties/AssemblyInfo.cs',
                                'AssemblyFileVersion\\([".0-9]+\\)',
                                f'AssemblyFileVersion("{version}.0")'),
-        FilePatternReplacement('ChebsModStub/ChebsModStub.cs',
+        FilePatternReplacement('ChebsDemolisherSword/ChebsDemolisherSword.cs',
                                'PluginVersion = [".0-9]+',
                                f'PluginVersion = "{version}"'),
-        FilePatternReplacement('ChebsModStub/Package/manifest.json',
+        FilePatternReplacement('ChebsDemolisherSword/Package/manifest.json',
                                '"version_number": [".0-9]+',
                                f'"version_number": "{version}"'),
     ]

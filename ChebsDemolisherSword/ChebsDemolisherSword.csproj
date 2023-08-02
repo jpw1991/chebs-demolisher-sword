@@ -8,8 +8,8 @@
     <ProjectGuid>{DEAF4438-8089-40ED-8175-398E1261D45B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChebsModStub</RootNamespace>
-    <AssemblyName>ChebsModStub</AssemblyName>
+    <RootNamespace>ChebsDemolisherSword</RootNamespace>
+    <AssemblyName>ChebsDemolisherSword</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -65,9 +65,6 @@
     <Reference Include="assembly_valheim" Publicize="true">
       <HintPath>..\..\..\.local\share\Steam\steamapps\common\Valheim\valheim_Data\Managed\assembly_valheim.dll</HintPath>
     </Reference>
-    <Reference Include="ChebsValheimLibrary">
-      <HintPath>..\..\chebs-valheim-library\ChebsValheimLibrary\bin\Release\ChebsValheimLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Jotunn, Version=2.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\JotunnLib.2.11.0\lib\net462\Jotunn.dll</HintPath>
     </Reference>
@@ -121,7 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\IgnoreAccessModifiers.cs" />
-    <Compile Include="ChebsModStub.cs" />
+    <Compile Include="ChebsDemolisherSword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

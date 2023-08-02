@@ -1,0 +1,9 @@
+﻿{
+  "name": "ChebsDemolisherSword",
+  "description": "A mod that replaces the Demolisher Hammer's mesh & texture with that of a sword.",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/jpw1991/chebs-demolisher-sword",
+  "dependencies": [
+    "ValheimModding-Jotunn-2.11.2"
+  ]
+}

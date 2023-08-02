@@ -19,14 +19,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Get latest .NET SDK version
-        id: dotnet-version
-        run: echo "::set-output name=version::$(dotnet --list-sdks | grep -oP '(?<=^\d.\d.\d)\d+')"
-
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ steps.dotnet-version.outputs.version }}
+          dotnet-version: 7.0.0
 
       - name: Install markdown_to_bbcodenm tool
         run: dotnet tool install -g Converter.MarkdownToBBCodeNM.Tool

@@ -74,6 +74,7 @@ You can find the github [here](https://github.com/jpw1991/chebs-demolisher-sword
 
  Date | Version | Notes 
 --- | --- | ---
+23/08/2023 | 1.1.0 | update for new valheim patch
 02/08/2023 | 1.0.0 | Release
 
 </details>

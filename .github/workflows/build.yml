@@ -7,8 +7,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - build-*
 
 env:
   name: ChebsDemolisherSword
@@ -114,7 +112,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ env.VERSION }}
+          tag_name: v${{ env.VERSION }}
           draft: true
           body: ${{github.event.workflow_run.head_commit.message}}
           files: |

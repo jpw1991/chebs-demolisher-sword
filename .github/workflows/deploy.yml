@@ -13,18 +13,32 @@ env:
   namespace: ChebGonaz
 
 jobs:
-  verify:
+  check-release-tag:
     runs-on: ubuntu-latest
+    steps:
+      - name: Check release tag
+        run: |
+          if [[ "${{ github.event.release.tag_name }}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Valid release tag. Continue with the workflow."
+          else
+            echo "Invalid release tag. Exiting gracefully."
+            exit 0  # Exit without an error
+          fi
+  verify-manifest:
+    runs-on: ubuntu-latest
+    needs: check-release-tag
     steps:
       - uses: actions/checkout@v3
       - name: Check that version matches
         run: |
-          if [[ "$(jq -r '.version_number' $(find ./${{env.name}}/Package -name ${{env.jsonf}}))" != "${{github.event.release.tag_name}}" ]]; then
+          versionwithoutv=$(echo ${{github.event.release.tag_name}} | cut -d 'v' -f 2)
+          if [[ "$(jq -r '.version_number' $(find ./${{env.name}}/Package -name ${{env.jsonf}}))" != $versionwithoutv ]]; then
             echo "::debug::${{github.event.release.tag_name}}"
             echo "::debug::$(cat $(find ./ -name ${{env.jsonf}}))"
             echo "::error::Version in ${{env.jsonf}} does not match tag version"
             exit 1
           fi
+          echo "VERSION=${versionwithoutv}" >> $GITHUB_ENV
       - name: Get Description
         id: get_description
         run: |
@@ -32,19 +46,19 @@ jobs:
           echo "DESCRIPTION=${description}" >> $GITHUB_ENV
   publish:
     runs-on: ubuntu-latest
-    needs: verify
+    needs: verify-manifest
     steps:
       - uses: actions/checkout@v3
-      - run: wget ${{env.dlpath}}/${{github.ref_name}}/${{env.name}}.${{github.ref_name}}.zip
+      - run: wget ${{env.dlpath}}/${{github.ref_name}}/${{env.name}}.${{env.VERSION}}.zip
       - name: Upload Thunderstore Package
         uses: GreenTF/upload-thunderstore-package@v4
         with:
           community: valheim
           namespace: ${{env.namespace}}
           name: ${{env.name}}
-          version: ${{github.event.release.tag_name}}
+          version: ${{env.VERSION}}
           description: ${{env.DESCRIPTION}}
           token: ${{secrets.TS_KEY}}
           deps: ${{env.dependencies}}
           categories: ${{env.categories}}
-          file: ${{env.name}}.${{github.event.release.tag_name}}.zip
+          file: ${{env.name}}.${{env.VERSION}}.zip

@@ -36,11 +36,12 @@ jobs:
       - name: Get assets
         run : |
           assetversion=$(echo ${{env.VERSION}} | cut -d '.' -f 1).$(echo ${{env.VERSION}} | cut -d '.' -f 2).0
+          mkdir ${{env.name}}/Package/plugins
           for asset in enclavesix enclavesix.manifest
           do
             wget https://github.com/jpw1991/chebs-demolisher-sword/releases/download/asset$assetversion/$asset
             [ ! -f "$asset" ] && echo "$asset not found!"
-            mv $asset ${{env.name}}/Package
+            mv $asset ${{env.name}}/Package/plugins
           done
 
       - name: Get Valheim version id
@@ -100,8 +101,9 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Package
         run: |
-          mkdir ${{env.name}}/Package/plugins
-          ./publish_release.sh ${{env.VERSION}}
+          cp -f ${{env.name}}/bin/Release/${{env.name}}.dll ${{env.name}}/Package/plugins
+          cp -f README.md ${{env.name}}/Package
+          zip -r ${{env.name}}/bin/Release/${{env.name}}.${{env.VERSION}}.zip ${{env.name}}/Package
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:

@@ -74,6 +74,7 @@ You can find the github [here](https://github.com/jpw1991/chebs-demolisher-sword
 
  Date | Version | Notes 
 --- | --- | ---
+03/12/2023 | 1.2.1 | update jotunn to 2.15.0
 06/10/2023 | 1.2.0 | update of packages and recompile for hildr's request
 23/08/2023 | 1.1.0 | update for new valheim patch
 02/08/2023 | 1.0.0 | Release

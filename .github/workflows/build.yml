@@ -116,7 +116,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: v${{ env.VERSION }}
-          draft: true
           body: ${{github.event.workflow_run.head_commit.message}}
           files: |
             ${{env.name}}.${{env.VERSION}}.zip

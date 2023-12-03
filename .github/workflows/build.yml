@@ -66,6 +66,7 @@ jobs:
           cd ..
           ./steamcmd/steamcmd.sh +force_install_dir ${{env.valheiminstalldir}} +login anonymous +app_update 896660 validate +exit
       - name: Install BepInEx
+        if: steps.cachevalheim.outputs.cache-hit != 'true'
         run: |
           mv ${{env.valheiminstalldir}}/valheim_server_Data/ ${{env.valheiminstalldir}}/valheim_Data/
           wget -O BepInEx.zip ${{ env.bepinexdl }}
@@ -103,7 +104,7 @@ jobs:
         run: |
           cp -f ${{env.name}}/bin/Release/${{env.name}}.dll ${{env.name}}/Package/plugins
           cp -f README.md ${{env.name}}/Package
-          zip -r ${{env.name}}/bin/Release/${{env.name}}.${{env.VERSION}}.zip ${{env.name}}/Package
+          (cd ChebsDemolisherSword/Package && zip -r ../../${{env.name}}.${{env.VERSION}}.zip .)
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -118,5 +119,5 @@ jobs:
           draft: true
           body: ${{github.event.workflow_run.head_commit.message}}
           files: |
-            ${{env.name}}/bin/Release/${{env.name}}.${{env.VERSION}}.zip
+            ${{env.name}}.${{env.VERSION}}.zip
 

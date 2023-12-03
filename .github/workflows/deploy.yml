@@ -8,12 +8,12 @@ env:
   name: ChebsDemolisherSword
   jsonf: manifest.json
   dlpath: https://github.com/jpw1991/chebs-demolisher-sword/releases/download
-  dependencies: "ValheimModding-Jotunn@2.11.2" # dependencies separated by spaces
+  dependencies: "ValheimModding-Jotunn@2.15.0" # dependencies separated by spaces
   categories: "Mods" # categories separated by spaces
   namespace: ChebGonaz
 
 jobs:
-  check-release-tag:
+  check_release_tag:
     runs-on: ubuntu-latest
     steps:
       - name: Check release tag
@@ -24,9 +24,9 @@ jobs:
             echo "Invalid release tag. Exiting gracefully."
             exit 0  # Exit without an error
           fi
-  verify-manifest:
+  verify_manifest:
     runs-on: ubuntu-latest
-    needs: check-release-tag
+    needs: check_release_tag
     steps:
       - uses: actions/checkout@v3
       - name: Check that version matches
@@ -46,7 +46,7 @@ jobs:
           echo "DESCRIPTION=${description}" >> $GITHUB_ENV
   publish:
     runs-on: ubuntu-latest
-    needs: verify-manifest
+    needs: verify_manifest
     steps:
       - uses: actions/checkout@v3
       - run: wget ${{env.dlpath}}/${{github.ref_name}}/${{env.name}}.${{env.VERSION}}.zip

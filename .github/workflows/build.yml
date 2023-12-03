@@ -58,9 +58,6 @@ jobs:
         with:
           name: bbc
       
-      - name: Unzip bbc
-        run: ls -la && unzip bbc.zip
-      
       - name: Get version
         run: |
           version="$(jq -r '.version_number' $(find ./${{env.name}}/Package -name ${{env.jsonf}}))"

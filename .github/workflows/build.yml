@@ -59,7 +59,7 @@ jobs:
           name: bbc
       
       - name: Unzip bbc
-        run: unzip bbc.zip
+        run: ls -la && unzip bbc.zip
       
       - name: Get version
         run: |

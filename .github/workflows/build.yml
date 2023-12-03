@@ -37,11 +37,12 @@ jobs:
       - name: Archive README.bbc
         uses: actions/upload-artifact@v3
         with:
-          name: bbcode-artifact
+          name: bbc
           path: ${{env.outf}}
 
   build:
     runs-on: ubuntu-latest
+    needs: convert
     strategy:
       matrix:
         dotnet-version: [ '7.0.x' ]
@@ -55,8 +56,10 @@ jobs:
       
       - uses: actions/download-artifact@v3
         with:
-          name: bbcode-artifact
-          path: ${{env.outf}}
+          name: bbc
+      
+      - name: Unzip bbc
+        run: unzip bbc.zip
       
       - name: Get version
         run: |

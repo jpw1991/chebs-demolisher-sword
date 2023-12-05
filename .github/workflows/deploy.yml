@@ -42,7 +42,7 @@ jobs:
     needs: verify_manifest
     steps:
       - uses: actions/checkout@v3
-      - run: wget ${{env.dlpath}}/${{github.ref_name}}/${{env.name}}.${{env.VERSION}}.zip
+      - run: wget ${{env.dlpath}}/v${{env.VERSION}}/${{env.name}}.${{env.VERSION}}.zip
       - name: Upload Thunderstore Package
         uses: GreenTF/upload-thunderstore-package@v4
         with:

@@ -4,6 +4,6 @@
   "version_number": "1.2.1",
   "website_url": "https://github.com/jpw1991/chebs-demolisher-sword",
   "dependencies": [
-    "ValheimModding-Jotunn-2.11.2"
+    "ValheimModding-Jotunn-2.15.0"
   ]
 }

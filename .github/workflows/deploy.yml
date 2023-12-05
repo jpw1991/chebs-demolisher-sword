@@ -17,17 +17,6 @@ env:
   namespace: ChebGonaz
 
 jobs:
-  check_release_tag:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check release tag
-        run: |
-          if [[ "${{ github.event.release.tag_name }}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Valid release tag. Continue with the workflow."
-          else
-            echo "Invalid release tag."
-            exit 1
-          fi
   verify_manifest:
     runs-on: ubuntu-latest
     needs: check_release_tag

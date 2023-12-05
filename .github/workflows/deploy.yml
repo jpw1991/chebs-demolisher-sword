@@ -19,7 +19,6 @@ env:
 jobs:
   verify_manifest:
     runs-on: ubuntu-latest
-    needs: check_release_tag
     steps:
       - uses: actions/checkout@v3
       - name: Check that version matches

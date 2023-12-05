@@ -149,7 +149,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           # use secrets.VALHEIM_ACTIONS to trigger the workflow instead of GITHUB_TOKEN as described here: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow
-          token: ${{ VALHEIM_ACTIONS }}
+          token: ${{ secrets.VALHEIM_ACTIONS }}
           tag_name: v${{ env.VERSION }}
           body: ${{github.event.workflow_run.head_commit.message}}
           files: |

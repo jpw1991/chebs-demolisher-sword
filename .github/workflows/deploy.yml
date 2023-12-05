@@ -3,6 +3,10 @@ name: Publish package
 on:
   release:
     types: [published] # run when a new release is published
+  workflow_run:
+    workflows: ["build"] # run if build.yml is successfully completed
+    types:
+      - completed
 
 env:
   name: ChebsDemolisherSword

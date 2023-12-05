@@ -147,9 +147,6 @@ jobs:
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
-        env:
-          # use secrets.VALHEIM_ACTIONS to trigger the workflow instead of GITHUB_TOKEN as described here: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow
-          GITHUB_TOKEN: ${{ secrets.VALHEIM_ACTIONS }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: v${{ env.VERSION }}

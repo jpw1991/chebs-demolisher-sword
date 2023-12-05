@@ -144,17 +144,12 @@ jobs:
           cp -f README.md ${{env.name}}/Package
           (cd ChebsDemolisherSword/Package && zip -r ../../${{env.name}}.${{env.VERSION}}.zip .)
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: thunderstore-package-artifact
-          path: ${{ env.name }}/bin/Release/${{ env.name }}.${{ env.VERSION }}.zip
-
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # use secrets.VALHEIM_ACTION to trigger the workflow instead of GITHUB_TOKEN as described here: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow
+          token: ${{ secrets.VALHEIM_ACTION }}
           tag_name: v${{ env.VERSION }}
           body: ${{github.event.workflow_run.head_commit.message}}
           files: |

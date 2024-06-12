@@ -16,7 +16,7 @@ This mod was commissioned by Nexus Mods user [EnclaveSix](https://forums.nexusmo
 
 I'm a YouTuber/Game Developer/Modder who is interested in all things necromancy and minion-related. Please check out my [YouTube channel](https://www.youtube.com/channel/UCPlZ1XnekiJxKymXbXyvkCg) and if you like the work I do and want to give back, please consider supporting me on [Patreon](https://www.patreon.com/chebgonaz?fan_landing=true) or throwing me a dime on [Ko-fi](https://ko-fi.com/chebgonaz). You can also check out my [website](https://necrobase.chebgonaz.com) where I host information on all known necromancy mods, games, books, videos and also some written reviews/guides.
 
-Thank you and I hope you enjoy the mod! If you have questions or need help please join my [Discord](https://discord.com/invite/EB96ASQ).
+Thank you and I hope you enjoy the mod! If you have questions or need help please join my [Discord](https://discord.gg/BweDFym6sc).
 
 ### Bisect Hosting
 
@@ -30,7 +30,7 @@ If you would like to report a bug or request a feature, the best way to do it (i
 
 a) Create an issue on my [GitHub](https://github.com/jpw1991/chebs-demolisher-sword).
 
-b) Write to me on [Discord](https://discord.com/invite/EB96ASQ).
+b) Write to me on [Discord](https://discord.gg/BweDFym6sc).
 
 ## Requirements
 

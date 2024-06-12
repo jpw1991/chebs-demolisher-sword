@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RELEASEDIR=ChebsDemolisherSword/bin/Release
+RELEASEDIR=ChebsDemolisherSword/bin/Release/net48
 DLL=$RELEASEDIR/ChebsDemolisherSword.dll
 BUN=../chebs-necromancy/ChebsNecromancyUnity/Assets/AssetBundles/enclavesix
 PLUGINS=ChebsDemolisherSword/Package/plugins
@@ -42,7 +42,7 @@ cp -f "$README" "$PLUGINS/../README.md" || { echo "Error: Failed to copy $README
 cp -f "$BUN" "$PLUGINS" || { echo "Error: Failed to copy $BUN"; exit 1; }
 cp -f "$BUN.manifest" "$PLUGINS" || { echo "Error: Failed to copy $BUN.manifest"; exit 1; }
 
-ZIPDESTINATION="../bin/Release/ChebsDemolisherSword.$VERSION.zip"
+ZIPDESTINATION="../bin/Release/net48/ChebsDemolisherSword.$VERSION.zip"
 
 cd "$PLUGINS/.."
 if [ ! -z "$VERSION" ]; then

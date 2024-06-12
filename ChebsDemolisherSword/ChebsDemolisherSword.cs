@@ -15,7 +15,7 @@ namespace ChebsDemolisherSword
     {
         public const string PluginGuid = "com.chebgonaz.chebsdemolishersword";
         public const string PluginName = "ChebsDemolisherSword";
-        public const string PluginVersion = "1.2.1";
+        public const string PluginVersion = "1.2.2";
 
         private Mesh _demolisherSwordMesh;
         private Material _demolisherSwordMaterial;
